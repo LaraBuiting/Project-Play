@@ -4,20 +4,11 @@ using UnityEngine;
 
 public class canPickup : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void OnTriggerEnter2D(Collider2D Can)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        //Destroy(GameObject);
+        if (Can.gameObject.CompareTag("Can"))
+        {
+            Destroy(Can.gameObject);
+        }
     }
 }
