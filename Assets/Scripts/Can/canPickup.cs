@@ -11,7 +11,7 @@ public class canPickup : MonoBehaviour
     void Start()
     {
         CanAmount = 0;
-        MyCanAmountText.text = "Dirty cans: " + CanAmount;
+        MyCanAmountText.text = ": " + CanAmount;
     }
 
     private void OnTriggerEnter2D(Collider2D Can)
@@ -20,7 +20,7 @@ public class canPickup : MonoBehaviour
         {
             CanAmount++;
             Destroy(Can.gameObject);
-            MyCanAmountText.text = "Dirty cans: " + CanAmount;
+            MyCanAmountText.text = ": " + CanAmount;
         }
     }
 }
