@@ -27,10 +27,9 @@ public class playerMovement : MonoBehaviour
             if (Input.GetKey(KeyCode.E) && Cooldown == false)
             {
                 speed = energySpeed;
-                StartCoroutine(waitAFewSeconds(6f));
+                StartCoroutine(waitAFewSeconds(4f));
             }
         }
-
 
         //If you press the basis up down buttons the character moves that way
         if (Input.GetKey(KeyCode.W) ^ Input.GetKey(KeyCode.S) ^ Input.GetKey(KeyCode.UpArrow) ^ Input.GetKey(KeyCode.DownArrow))
@@ -41,7 +40,7 @@ public class playerMovement : MonoBehaviour
             if (Input.GetKey(KeyCode.E) && Cooldown == false)
             {
                 speed = energySpeed;
-                StartCoroutine(waitAFewSeconds(6f));
+                StartCoroutine(waitAFewSeconds(4f));
             }
         }
     }
@@ -51,8 +50,13 @@ public class playerMovement : MonoBehaviour
     {
         //wait for a couple of seconds
         yield return new WaitForSeconds(2f);
+        //put the speed back to normal
         speed = normalSpeed;
-        yield return new WaitForSeconds(4f);
+        //turn the cooldown on
         Cooldown = true;
+        //wait a few seconds
+        yield return new WaitForSeconds(4f);
+        //turn the cooldown off
+        Cooldown = false;
     }
 }

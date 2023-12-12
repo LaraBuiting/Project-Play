@@ -506,7 +506,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   normalSpeed: 4
-  energySpeed: 5.5
+  energySpeed: 6
   speed: 4
 --- !u!212 &2110264034
 SpriteRenderer:
