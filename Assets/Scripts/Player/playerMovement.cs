@@ -9,15 +9,11 @@ public class playerMovement : MonoBehaviour
     public float normalSpeed = 2.5f;
     public float energySpeed = 3.5f;
     public float speed = 2.5f;
-    public float energyLost = 0.05f;
-    public float energyGained = 4f;
+    public float energyLost = 0.5f;
+    public float energyGained = 5f;
 
-    private bool Cooldown = false;
-
-    private void Start()
-    {
-        StartCoroutine(energyDepletingCountdown(60f));
-    }
+    private bool speedCooldown = false;
+    private bool eneryCooldown = false;
 
     // Update is called once per frame
     void Update()
@@ -31,11 +27,11 @@ public class playerMovement : MonoBehaviour
             transform.Translate(Vector2.right * inputX * speed * Time.deltaTime);
 
             //If you press E then you gain speed because you drank some energy
-            if (Input.GetKey(KeyCode.E) && Cooldown == false)
+            if (Input.GetKey(KeyCode.E) && speedCooldown == false)
             {
                 speed = energySpeed;
                 GetComponent<currentEnergy>().loseEnergy(-energyGained);
-                StartCoroutine(initiateCooldown(4f));
+                StartCoroutine(initiateCooldown(10f));
             }
         }
 
@@ -45,12 +41,17 @@ public class playerMovement : MonoBehaviour
             transform.Translate(Vector2.up * inputY * speed * Time.deltaTime);
             
             //If you press E then you gain speed because you drank some energy
-            if (Input.GetKey(KeyCode.E) && Cooldown == false)
+            if (Input.GetKey(KeyCode.E) && speedCooldown == false)
             {
                 speed = energySpeed;
                 GetComponent<currentEnergy>().loseEnergy(-energyGained);
-                StartCoroutine(initiateCooldown(4f));
+                StartCoroutine(initiateCooldown(10f));
             }
+        }
+
+        if (eneryCooldown == false)
+        {
+            StartCoroutine(energyDepletingCountdown(10f)); 
         }
     }
 
@@ -62,20 +63,23 @@ public class playerMovement : MonoBehaviour
         //put the speed back to normal
         speed = normalSpeed;
         //turn the cooldown on
-        Cooldown = true;
+        speedCooldown = true;
         //wait a few seconds
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(2f);
         //turn the cooldown off
-        Cooldown = false;
+        speedCooldown = false;
+        eneryCooldown = true;
         //wait a few seconds
-        yield return new WaitForSeconds(25f);
-        StartCoroutine(energyDepletingCountdown(25f));
+        yield return new WaitForSeconds(5f);
+        eneryCooldown = false;
     }
 
     IEnumerator energyDepletingCountdown(float seconds)
     {
-        yield return new WaitForSeconds(30f);
+        eneryCooldown = true;
+        //yield return new WaitForSeconds(2f);
         GetComponent<currentEnergy>().loseEnergy(energyLost);
-        yield return new WaitForSeconds(30f);
+        yield return new WaitForSeconds(2f);
+        eneryCooldown = false;
     }
 }

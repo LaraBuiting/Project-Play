@@ -15,7 +15,7 @@ public class currentEnergy : MonoBehaviour
 
     public void loseEnergy(float _damage)
     {
-        EnergyAtTheMoment = Mathf.Clamp(EnergyAtTheMoment - (_damage / 2), 0, startingEnergy);
+        EnergyAtTheMoment = Mathf.Clamp(EnergyAtTheMoment - _damage, 0, startingEnergy);
 
         //if (EnergyAtTheMoment > 0)
         //{
