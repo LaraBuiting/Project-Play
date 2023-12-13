@@ -9,8 +9,15 @@ public class playerMovement : MonoBehaviour
     public float normalSpeed = 2.5f;
     public float energySpeed = 3.5f;
     public float speed = 2.5f;
+    public float energyLost = 0.05f;
+    public float energyGained = 4f;
 
     private bool Cooldown = false;
+
+    private void Start()
+    {
+        StartCoroutine(energyDepletingCountdown(60f));
+    }
 
     // Update is called once per frame
     void Update()
@@ -27,7 +34,8 @@ public class playerMovement : MonoBehaviour
             if (Input.GetKey(KeyCode.E) && Cooldown == false)
             {
                 speed = energySpeed;
-                StartCoroutine(waitAFewSeconds(4f));
+                GetComponent<currentEnergy>().loseEnergy(-energyGained);
+                StartCoroutine(initiateCooldown(4f));
             }
         }
 
@@ -40,13 +48,14 @@ public class playerMovement : MonoBehaviour
             if (Input.GetKey(KeyCode.E) && Cooldown == false)
             {
                 speed = energySpeed;
-                StartCoroutine(waitAFewSeconds(4f));
+                GetComponent<currentEnergy>().loseEnergy(-energyGained);
+                StartCoroutine(initiateCooldown(4f));
             }
         }
     }
 
     // IEnumerator is a function that goes through each step
-    IEnumerator waitAFewSeconds(float seconds)
+    IEnumerator initiateCooldown(float seconds)
     {
         //wait for a couple of seconds
         yield return new WaitForSeconds(2f);
@@ -58,5 +67,15 @@ public class playerMovement : MonoBehaviour
         yield return new WaitForSeconds(4f);
         //turn the cooldown off
         Cooldown = false;
+        //wait a few seconds
+        yield return new WaitForSeconds(25f);
+        StartCoroutine(energyDepletingCountdown(25f));
+    }
+
+    IEnumerator energyDepletingCountdown(float seconds)
+    {
+        yield return new WaitForSeconds(30f);
+        GetComponent<currentEnergy>().loseEnergy(energyLost);
+        yield return new WaitForSeconds(30f);
     }
 }
