@@ -17,15 +17,15 @@ public class currentEnergy : MonoBehaviour
     {
         EnergyAtTheMoment = Mathf.Clamp(EnergyAtTheMoment - _damage, 0, startingEnergy);
 
-        //if (EnergyAtTheMoment > 0)
-        //{
-        //    //player loses energy
-        //}
-        //else
-        //{
-        //    //player loses
-        //    //PlayerManager.isGameOver = true;
-        //    //gameObject.SetActive(false);
-        //}
+        if (EnergyAtTheMoment > 0)
+        {
+            //player loses energy
+        }
+        else
+        {
+            //player loses
+            //PlayerManager.isGameOver = true;
+            //gameObject.SetActive(false);
+        }
     }
 }

@@ -77,7 +77,6 @@ public class playerMovement : MonoBehaviour
     IEnumerator energyDepletingCountdown(float seconds)
     {
         eneryCooldown = true;
-        //yield return new WaitForSeconds(2f);
         GetComponent<currentEnergy>().loseEnergy(energyLost);
         yield return new WaitForSeconds(2f);
         eneryCooldown = false;
