@@ -362,7 +362,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingEnergy: 10
-  playerEnergy: {fileID: 0}
+  playerEnergy: {fileID: 2110264039}
   totalEnergyBar: {fileID: 159725664}
   currentEnergyBar: {fileID: 1591860450}
 --- !u!1 &367316038
