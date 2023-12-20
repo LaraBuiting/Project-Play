@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -12,41 +13,75 @@ public class playerMovement : MonoBehaviour
     public float energyLost = 0.5f;
     public float energyGained = 5f;
 
+    private Animator anim;
+
+    private float xInput;
+    private float yInput;
     private bool speedCooldown = false;
     private bool eneryCooldown = false;
+
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
 
     // Update is called once per frame
     void Update()
     {
-        float inputX = Input.GetAxis("Horizontal");
-        float inputY = Input.GetAxis("Vertical");
+        xInput = Input.GetAxis("Horizontal");
+        yInput = Input.GetAxis("Vertical");
 
-        //If you press the basic sideways buttons the character moves sideways
-        if (Input.GetKey(KeyCode.A) ^ Input.GetKey(KeyCode.D) ^ Input.GetKey(KeyCode.RightArrow) ^ Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
-            transform.Translate(Vector2.right * inputX * speed * Time.deltaTime);
+            anim.SetBool("aOrdPressed", true);
+            transform.Translate(Vector2.right * xInput * speed * Time.deltaTime);
 
-            //If you press E then you gain speed because you drank some energy
-            if (Input.GetKey(KeyCode.E) && speedCooldown == false)
+            if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
             {
-                speed = energySpeed;
-                GetComponent<currentEnergy>().loseEnergy(-energyGained);
-                StartCoroutine(initiateCooldown(10f));
+                GetComponent<SpriteRenderer>().flipX = true;
+            }
+            else
+            {
+                GetComponent<SpriteRenderer>().flipX = false;
             }
         }
-
-        //If you press the basis up down buttons the character moves that way
-        if (Input.GetKey(KeyCode.W) ^ Input.GetKey(KeyCode.S) ^ Input.GetKey(KeyCode.UpArrow) ^ Input.GetKey(KeyCode.DownArrow))
+        else
         {
-            transform.Translate(Vector2.up * inputY * speed * Time.deltaTime);
-            
-            //If you press E then you gain speed because you drank some energy
-            if (Input.GetKey(KeyCode.E) && speedCooldown == false)
-            {
-                speed = energySpeed;
-                GetComponent<currentEnergy>().loseEnergy(-energyGained);
-                StartCoroutine(initiateCooldown(10f));
-            }
+            anim.SetBool("aOrdPressed", false);
+        }
+
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+        {
+            anim.SetBool("wPressed", true);
+            transform.Translate(Vector2.up * yInput * speed * Time.deltaTime);
+        }else
+        {
+            anim.SetBool("wPressed", false);
+        }
+
+        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+        {
+            anim.SetBool("sPressed", true);
+            transform.Translate(Vector2.up * yInput * speed * Time.deltaTime);
+        }else
+        {
+            anim.SetBool("sPressed", false);
+        }
+
+        //If you press E then you gain speed because you drank some energy
+        if (Input.GetKey(KeyCode.E) && speedCooldown == false)
+        {
+            speed = energySpeed;
+            GetComponent<currentEnergy>().loseEnergy(-energyGained);
+            StartCoroutine(initiateCooldown(10f));
+        }
+
+        //If you press E then you gain speed because you drank some energy
+        if (Input.GetKey(KeyCode.E) && speedCooldown == false)
+        {
+            speed = energySpeed;
+            GetComponent<currentEnergy>().loseEnergy(-energyGained);
+            StartCoroutine(initiateCooldown(10f));
         }
 
         if (eneryCooldown == false)
