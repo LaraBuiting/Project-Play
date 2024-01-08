@@ -13,7 +13,7 @@ public class Patrol : MonoBehaviour
 
     void Start()
     {
-        randomSpot = Random.Range(0, moveSpots.Length);
+        //randomSpot = Random.Range(0, moveSpots.Length);
     }
 
     void Update()
