@@ -13,7 +13,8 @@ public class Patrol : MonoBehaviour
 
     void Start()
     {
-        //randomSpot = Random.Range(0, moveSpots.Length);
+        waitTime = startWaitTime;
+        randomSpot = Random.Range(0, moveSpots.Length);
     }
 
     void Update()

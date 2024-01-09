@@ -99,8 +99,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 550f3c75e4c8744488cb7442987c8291, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2.5
-  decisionTime: {x: 1, y: 4}
 --- !u!58 &788767655003269124
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -148,3 +146,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 718e7de363e37a34db5d36f0f80ce52f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0
+  startWaitTime: 0
+  moveSpots: []
