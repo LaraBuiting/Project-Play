@@ -5857,6 +5857,10 @@ PrefabInstance:
       value: NPC
       objectReference: {fileID: 0}
     - target: {fileID: 4151514197312329094, guid: 8b1dc9b5212b51f49bbf9c801c73d5a0, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4151514197312329094, guid: 8b1dc9b5212b51f49bbf9c801c73d5a0, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 453421789, guid: 8d4af36cf09513a4d965aa1541129e42, type: 3}
