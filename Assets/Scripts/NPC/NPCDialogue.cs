@@ -114,8 +114,6 @@ public class NPCDialogue : MonoBehaviour
         index = choiceLine + 1;
         lines[index] = wrongDialogue;
         StartCoroutine(Typing());
-
-        StartCoroutine(initiateCooldown(10f));
     }
 
     //checks if player collides with npc
