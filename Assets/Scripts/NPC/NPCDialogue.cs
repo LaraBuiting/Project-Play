@@ -9,11 +9,26 @@ public class NPCDialogue : MonoBehaviour
     public GameObject dialoguePanel;
     public TextMeshProUGUI dialogueText;
     public string[] lines;
+    public string correctDialogue;
+    public string wrongDialogue;
     public float textSpeed;
+
+    public TextMeshProUGUI happyPeopleScoreText;
+    private int happyAmount;
+
+    public int choiceLine;
+    public GameObject buttons;
+    public GameObject correctOption;
+    public GameObject wrongOption;
 
     private int index;
     private bool playerIsClose;
 
+    private void Start()
+    {
+        happyAmount = 0;
+        happyPeopleScoreText.text = ": " + happyAmount;
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.F) && playerIsClose)
@@ -52,6 +67,15 @@ public class NPCDialogue : MonoBehaviour
             dialogueText.text += letter;
             yield return new WaitForSeconds(textSpeed);
         }
+
+        if (index == choiceLine)
+        {
+            buttons.SetActive(true);
+        }
+        else
+        {
+            lines[choiceLine + 1] = "";
+        }
     }
 
     public void NextLine()
@@ -66,6 +90,26 @@ public class NPCDialogue : MonoBehaviour
         {
             ZeroText();
         }
+    }
+
+    public void CorrectChoice()
+    {
+        dialogueText.text = "";
+        buttons.SetActive(false);
+        index = choiceLine + 1;
+        lines[index] = correctDialogue;
+        StartCoroutine(Typing());
+        happyAmount++;
+        happyPeopleScoreText.text = ": " + happyAmount;
+    }
+
+    public void WrongChoice()
+    {
+        buttons.SetActive(false);
+        dialogueText.text = "";
+        index = choiceLine + 1;
+        lines[index] = wrongDialogue;
+        StartCoroutine(Typing());
     }
 
     //checks if player collides with npc
