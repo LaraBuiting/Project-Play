@@ -13,6 +13,8 @@ public class NPCDialogue : MonoBehaviour
     public string wrongDialogue;
     public float textSpeed;
 
+    public bool cooldown = false;
+
     public TextMeshProUGUI happyPeopleScoreText;
     private int happyAmount;
 
@@ -31,7 +33,7 @@ public class NPCDialogue : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) && playerIsClose)
+        if (Input.GetKeyDown(KeyCode.F) && playerIsClose && cooldown == false)
         {
             if (dialoguePanel.activeInHierarchy)
             {
@@ -101,6 +103,8 @@ public class NPCDialogue : MonoBehaviour
         StartCoroutine(Typing());
         happyAmount++;
         happyPeopleScoreText.text = ": " + happyAmount;
+
+        StartCoroutine(initiateCooldown(10f));
     }
 
     public void WrongChoice()
@@ -110,6 +114,8 @@ public class NPCDialogue : MonoBehaviour
         index = choiceLine + 1;
         lines[index] = wrongDialogue;
         StartCoroutine(Typing());
+
+        StartCoroutine(initiateCooldown(10f));
     }
 
     //checks if player collides with npc
@@ -131,5 +137,15 @@ public class NPCDialogue : MonoBehaviour
             playerIsClose = false;
             ZeroText();
         }
+    }
+
+    IEnumerator initiateCooldown(float seconds)
+    {
+        //turn the cooldown on
+        cooldown = true;
+        //wait a few seconds
+        yield return new WaitForSeconds(15f);
+        //turn the cooldown off
+        cooldown = false;
     }
 }
