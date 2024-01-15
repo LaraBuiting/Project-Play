@@ -31,3 +31,4 @@ public class GameOverMenu : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 }
+ 
