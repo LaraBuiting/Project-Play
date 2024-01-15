@@ -76,14 +76,6 @@ public class playerMovement : MonoBehaviour
             StartCoroutine(initiateCooldown(10f));
         }
 
-        //If you press E then you gain speed because you drank some energy
-        if (Input.GetKey(KeyCode.E) && speedCooldown == false)
-        {
-            speed = energySpeed;
-            GetComponent<currentEnergy>().loseEnergy(-energyGained);
-            StartCoroutine(initiateCooldown(10f));
-        }
-
         if (eneryCooldown == false)
         {
             StartCoroutine(energyDepletingCountdown(10f)); 
