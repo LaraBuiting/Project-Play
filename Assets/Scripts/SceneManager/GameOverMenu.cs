@@ -23,7 +23,7 @@ public class GameOverMenu : MonoBehaviour
     }
     public void Replay()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene("SampleScene2");
     }
 
     public void Home()
