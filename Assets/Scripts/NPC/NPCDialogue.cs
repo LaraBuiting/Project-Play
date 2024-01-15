@@ -78,7 +78,7 @@ public class NPCDialogue : MonoBehaviour
         {
             lines[choiceLine + 1] = "";
         }
-    }
+    }   
 
     public void NextLine()
     {
