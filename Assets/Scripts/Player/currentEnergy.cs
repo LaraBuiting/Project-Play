@@ -19,13 +19,11 @@ public class currentEnergy : MonoBehaviour
 
         if (EnergyAtTheMoment > 0)
         {
-            //player loses energy
+            GameOverMenu.isGameOver = false;
         }
         else
         {
-            //player loses
-            //PlayerManager.isGameOver = true;
-            //gameObject.SetActive(false);
+            GameOverMenu.isGameOver = true;
         }
     }
 }
