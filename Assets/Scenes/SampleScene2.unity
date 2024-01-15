@@ -3214,7 +3214,7 @@ MonoBehaviour:
   correctDialogue: Happy drink!
   wrongDialogue: "This looks more like yellow and orange. That\u2019s not what I
     asked! Give me the right one!"
-  textSpeed: 0.1
+  textSpeed: 0.05
   cooldown: 0
   happyPeopleScoreText: {fileID: 1121102912}
   choiceLine: 4
@@ -3344,10 +3344,10 @@ MonoBehaviour:
   - 
   correctDialogue: This seems like a good flavour, thank you!
   wrongDialogue: "Blackberries and Raspberry\u2026. Doesn\u2019t seem very yellow\u2026"
-  textSpeed: 0.1
+  textSpeed: 0.05
   cooldown: 0
   happyPeopleScoreText: {fileID: 1121102912}
-  choiceLine: 1
+  choiceLine: 3
   buttons: {fileID: 1778022613}
   correctOption: {fileID: 1017096575}
   wrongOption: {fileID: 1959112793}
@@ -4221,7 +4221,7 @@ MonoBehaviour:
   correctDialogue: YES! Thank you this is what I had in mind!
   wrongDialogue: "Hmmm\u2026.. I don\u2019t know what to think of this one. What
     else do you have?"
-  textSpeed: 0.1
+  textSpeed: 0.05
   cooldown: 0
   happyPeopleScoreText: {fileID: 1121102912}
   choiceLine: 3
@@ -4548,7 +4548,7 @@ MonoBehaviour:
     way. Goodluck!"
   correctDialogue: Thank you so much
   wrongDialogue: Oh I didnt want that
-  textSpeed: 0.1
+  textSpeed: 0.05
   cooldown: 0
   happyPeopleScoreText: {fileID: 1121102912}
   choiceLine: 15
@@ -4687,10 +4687,9 @@ MonoBehaviour:
   - 'The city must be happy! Your job is done here for now. '
   - 'I will take the remaining energy and put them in the truck. '
   - Get in and we are off to the next adventure together, to make more people happy!
-  - 
   correctDialogue: Thank you so much
   wrongDialogue: Oh I didnt want that
-  textSpeed: 0.1
+  textSpeed: 0.05
   cooldown: 0
   happyPeopleScoreText: {fileID: 1121102912}
   choiceLine: 15
@@ -4976,10 +4975,9 @@ MonoBehaviour:
     be happy again.
   - 'I have 2 different energy for you: blood orange & banana. And raspberry & blackberries.'
   - 'Based on the stories they tell you, you have to decide which one they want. '
-  - 
   correctDialogue: Thank you so much
   wrongDialogue: Oh I didnt want that
-  textSpeed: 0.1
+  textSpeed: 0.05
   cooldown: 0
   happyPeopleScoreText: {fileID: 1121102912}
   choiceLine: 15
@@ -5257,10 +5255,9 @@ MonoBehaviour:
   lines:
   - Hi! This is the only way to cross the water.
   - "It\u2019s very small, so be carefull!"
-  - 
   correctDialogue: Thank you so much
   wrongDialogue: Oh I didnt want that
-  textSpeed: 0.1
+  textSpeed: 0.05
   cooldown: 0
   happyPeopleScoreText: {fileID: 1121102912}
   choiceLine: 15
@@ -7010,7 +7007,7 @@ MonoBehaviour:
   - 
   correctDialogue: "I\u2019m instantly feeling better thanks to you!"
   wrongDialogue: "Banana and blood orange\u2026 They don\u2019t seem similar\u2026"
-  textSpeed: 0.1
+  textSpeed: 0.05
   cooldown: 0
   happyPeopleScoreText: {fileID: 1121102912}
   choiceLine: 5
@@ -9467,7 +9464,7 @@ MonoBehaviour:
   correctDialogue: Blood orange and Banana, that sounds sour. We will take it! I
     can understand now why it is so happy!
   wrongDialogue: NO absolutely not! We do not want this!
-  textSpeed: 0.1
+  textSpeed: 0.05
   cooldown: 0
   happyPeopleScoreText: {fileID: 1121102912}
   choiceLine: 6
@@ -9687,7 +9684,7 @@ MonoBehaviour:
   - 
   correctDialogue: This will do it, thank you!
   wrongDialogue: No!
-  textSpeed: 0.1
+  textSpeed: 0.05
   cooldown: 0
   happyPeopleScoreText: {fileID: 1121102912}
   choiceLine: 1
@@ -10116,10 +10113,10 @@ MonoBehaviour:
   - 
   correctDialogue: Thankyou this looks like a good flavour!
   wrongDialogue: "Uhh, this is not what I had in mind\u2026\u2026"
-  textSpeed: 0.1
+  textSpeed: 0.05
   cooldown: 0
   happyPeopleScoreText: {fileID: 1121102912}
-  choiceLine: 4
+  choiceLine: 3
   buttons: {fileID: 1778022613}
   correctOption: {fileID: 1017096575}
   wrongOption: {fileID: 1959112793}
