@@ -13,6 +13,8 @@ public class playerMovement : MonoBehaviour
     public float energyLost = 0.5f;
     public float energyGained = 5f;
 
+    public currentEnergy currentEnergy;
+
     private Animator anim;
 
     private float xInput;
@@ -98,6 +100,7 @@ public class playerMovement : MonoBehaviour
         eneryCooldown = true;
         //wait a few seconds
         yield return new WaitForSeconds(5f);
+        currentEnergy.EnergyAtTheMoment = currentEnergy.startingEnergy; 
         eneryCooldown = false;
     }
 
