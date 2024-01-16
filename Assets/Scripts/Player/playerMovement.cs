@@ -13,7 +13,7 @@ public class playerMovement : MonoBehaviour
     public float energyLost = 0.5f;
     public float energyGained = 5f;
 
-    public currentEnergy currentEnergy;
+    private currentEnergy currentEnergy;
 
     private Animator anim;
 
