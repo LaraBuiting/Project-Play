@@ -78,7 +78,7 @@ public class NPCDialogue : MonoBehaviour
         {
             lines[choiceLine + 1] = "";
         }
-    }   
+    }
 
     public void NextLine()
     {
@@ -96,9 +96,11 @@ public class NPCDialogue : MonoBehaviour
 
     public void CorrectChoice()
     {
+        Debug.Log("You chose correct");
         dialogueText.text = "";
         buttons.SetActive(false);
         index = choiceLine + 1;
+        Debug.Log(index);
         lines[index] = correctDialogue;
         StartCoroutine(Typing());
         happyAmount++;
@@ -109,6 +111,7 @@ public class NPCDialogue : MonoBehaviour
 
     public void WrongChoice()
     {
+        Debug.Log("wrong choice");
         buttons.SetActive(false);
         dialogueText.text = "";
         index = choiceLine + 1;
