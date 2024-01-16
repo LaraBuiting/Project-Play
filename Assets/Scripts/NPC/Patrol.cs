@@ -27,9 +27,9 @@ public class Patrol : MonoBehaviour
 
     void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, moveSpots[randomSpot].position, speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, moveSpots[randomSpot].position, speed * Time.deltaTime);
 
-        Vector2 walkDir = transform.position - moveSpots[randomSpot].position;
+        Vector3 walkDir = transform.position - moveSpots[randomSpot].position;
         walkDir.Normalize();
         if(walkDir.x > 0)
         {
@@ -40,7 +40,7 @@ public class Patrol : MonoBehaviour
             GetComponent<SpriteRenderer>().flipX = false;
         }
 
-        if (Vector2.Distance(transform.position, moveSpots[randomSpot].position) < 0.2f)
+        if (Vector3.Distance(transform.position, moveSpots[randomSpot].position) < 0.2f)
         {
             anim.SetBool("Walking", true);
 
