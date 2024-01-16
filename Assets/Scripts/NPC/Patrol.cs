@@ -9,9 +9,9 @@ public class Patrol : MonoBehaviour
     private float waitTime;
     public float startWaitTime;
 
-    public float leftWayPoint;
-    public float middleWayPoint;
-    public float rightWayPoint;
+    //public float leftWayPoint;
+    //public float middleWayPoint;
+    //public float rightWayPoint;
 
     public Animator anim;
 

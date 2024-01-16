@@ -75,6 +75,7 @@ public class playerMovement : MonoBehaviour
         {
             speed = energySpeed;
             GetComponent<currentEnergy>().loseEnergy(-energyGained);
+            currentEnergy.EnergyAtTheMoment = currentEnergy.startingEnergy;
             StartCoroutine(initiateCooldown(10f));
         }
 
@@ -100,7 +101,6 @@ public class playerMovement : MonoBehaviour
         eneryCooldown = true;
         //wait a few seconds
         yield return new WaitForSeconds(5f);
-        currentEnergy.EnergyAtTheMoment = currentEnergy.startingEnergy; 
         eneryCooldown = false;
     }
 

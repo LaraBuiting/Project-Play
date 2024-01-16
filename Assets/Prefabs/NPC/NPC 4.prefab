@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 8591491758819083050}
   - component: {fileID: 4151514197312329094}
-  - component: {fileID: 2143683872821753681}
   - component: {fileID: 788767655003269124}
-  - component: {fileID: -2210584046393143666}
-  m_Layer: 0
-  m_Name: NPC
+  - component: {fileID: 6103598516184528172}
+  - component: {fileID: 7913934680631635724}
+  m_Layer: 7
+  m_Name: NPC 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,9 +28,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 991490487603794469}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 14.74, y: 70.56, z: 0}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -75,8 +75,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_SortingOrder: 10
+  m_Sprite: {fileID: -745348054, guid: 050cdf5f4b1ed40408e138173314ee44, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -87,18 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2143683872821753681
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 991490487603794469}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 550f3c75e4c8744488cb7442987c8291, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!58 &788767655003269124
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -134,7 +122,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &-2210584046393143666
+--- !u!114 &6103598516184528172
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,9 +131,46 @@ MonoBehaviour:
   m_GameObject: {fileID: 991490487603794469}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 718e7de363e37a34db5d36f0f80ce52f, type: 3}
+  m_Script: {fileID: 11500000, guid: c77ffd06065e3e546966fb9b574f3de7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  startWaitTime: 0
-  moveSpots: []
+  dialoguePanel: {fileID: 0}
+  dialogueText: {fileID: 0}
+  lines:
+  - "Hey\u2026 I was trying to blend in with the background."
+  - "Guess that didn\u2019t work sadly. I don\u2019t feel like talking to someone
+    at the moment. "
+  - 'I did see you sell something to my friend over there. He seemed happy after. '
+  - I guess I will take one to. If you have more flavours then I will take a yellow
+    fruit flavour!
+  - 
+  correctDialogue: This seems like a good flavour, thank you!
+  wrongDialogue: "Blackberries and Raspberry\u2026. Doesn\u2019t seem very yellow\u2026"
+  textSpeed: 0.05
+  cooldown: 0
+  happyPeopleScoreText: {fileID: 0}
+  choiceLine: 3
+  buttons: {fileID: 0}
+  correctOption: {fileID: 0}
+  wrongOption: {fileID: 0}
+--- !u!95 &7913934680631635724
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991490487603794469}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 798a95f6585899a409ad4d1ca2f71463, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
