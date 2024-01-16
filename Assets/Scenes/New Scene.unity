@@ -134,7 +134,10 @@ GameObject:
   - component: {fileID: 921245847}
   - component: {fileID: 921245846}
   - component: {fileID: 921245845}
+<<<<<<< Updated upstream
   - component: {fileID: 921245848}
+=======
+>>>>>>> Stashed changes
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -216,6 +219,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
 --- !u!114 &921245848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,6 +264,8 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+=======
+>>>>>>> Stashed changes
 --- !u!1 &1541487296
 GameObject:
   m_ObjectHideFlags: 0
