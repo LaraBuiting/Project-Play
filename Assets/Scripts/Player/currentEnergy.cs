@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class currentEnergy : MonoBehaviour
 {
-    // SerializeField means that a non public variable can be changed in unity. A public variable is serializable by default
-    [SerializeField] private float startingEnergy;
-    public float EnergyAtTheMoment { get; private set; }
+    public float startingEnergy;
+    public float EnergyAtTheMoment { get; set; }
 
     private void Awake()
     {
